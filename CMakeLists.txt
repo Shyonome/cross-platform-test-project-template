@@ -16,7 +16,7 @@ if (UNIX)
     add_executable(Template.out ${HEADERS} ${SOURCES})
 
     # Project compilation flags
-    target_compile_options(Template.out PRIVATE -Wall -Wextra -Werror -Wpedantic -g) # -Wall -Wextra -Werror -Wpedantic
+    target_compile_options(Template.out PRIVATE -std:c++20 -Wall -Wextra -Werror -Wpedantic -g) # -Wall -Wextra -Werror -Wpedantic
 
     # Project library linking flag
     target_link_libraries(Template.out)
@@ -27,15 +27,15 @@ if (UNIX)
 elseif (WIN32)
 
     # Project binary type
-    add_executable(Template.exe ${HEADERS} ${SOURCES})
+    add_executable(Template ${HEADERS} ${SOURCES})
     
     # Project compilation flags
-    target_compile_options(Template.exe PRIVATE -Wall -Wextra -Werror -Wpedantic -g) # -Wall -Wextra -Werror -Wpedantic
+    target_compile_options(Template PRIVATE /std:c++20 /Wall /permissive-)
 
     # Project library linking flag
-    target_link_libraries(Template.exe)
+    target_link_libraries(Template)
 
     # Project dependencies
-    target_include_directories(Template.exe PRIVATE includes)
+    target_include_directories(Template PRIVATE includes)
 
 endif()
