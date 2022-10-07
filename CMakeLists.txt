@@ -16,7 +16,7 @@ if (UNIX)
     add_executable(Template.out ${HEADERS} ${SOURCES})
 
     # Project compilation flags
-    target_compile_options(Template.out PRIVATE -std:c++20 -Wall -Wextra -Werror -Wpedantic -g) # -Wall -Wextra -Werror -Wpedantic
+    target_compile_options(Template.out PRIVATE -std=c++20 -Wall -Wextra -Werror -Wpedantic -g) # -Wall -Wextra -Werror -Wpedantic
 
     # Project library linking flag
     target_link_libraries(Template.out)
